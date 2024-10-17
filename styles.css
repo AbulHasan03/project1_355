@@ -195,6 +195,7 @@ footer {
     overflow: hidden;
     cursor: pointer;
     text-align: center;
+    z-index: -3;
 }
 
 .grid-item img {
