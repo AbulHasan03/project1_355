@@ -4,6 +4,7 @@ html {
     margin: 0;
 }
 
+/*
 .hero-image {
     background-image: url('images/cat-hero.jpeg');
     height: 60%;
@@ -86,7 +87,7 @@ nav ul li a:hover {
     text-decoration: underline;
 
 }
-
+*/
 section {
     padding: 20px;
     margin: 20px 0;
