@@ -12,14 +12,6 @@ window.onload = function () { //when window loads fully
             timeSelect.add(option);
         }
     }
-};
-
-// time can either be or AM/PM, not 24 hour clock
-function formatAMPM(hour, minutes) {
-    const ampm = hour >= 12 ? 'PM' : 'AM';
-    const hour12 = hour % 12 || 12; // Convert to 12-hour format
-    return `${hour12}:${String(minutes).padStart(2, '0')} ${ampm}`;
-}
 
 document.getElementById('reservation-form').addEventListener('submit', function(e) {
     e.preventDefault(); // form wont reload the page
@@ -29,8 +21,8 @@ document.getElementById('reservation-form').addEventListener('submit', function(
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
     const guests = document.getElementById('guests').value;
-    const phone = document.getElementById('reservation-phonee').value;
-    const notes = document.getElementById('reservtion-notes')
+    const phone = document.getElementById('reservation-phone').value;
+    const notes = document.getElementById('reservation-notes').value;
    
     // new reservation object
     const reservationData = {
@@ -41,15 +33,22 @@ document.getElementById('reservation-form').addEventListener('submit', function(
         phone: phone,
         notes: notes
     };
-
+    console.log('Sending reservation data...');
     //save to clients browser 
     localStorage.setItem('reservation', JSON.stringify(reservationData));
     
     //save to database 
-    //saveReservationToBackend(reservationData);
+    saveReservationToBackend(reservationData);
+    });
+};
 
-
-//function saveReservationToBackend(data) {
+// time can either be or AM/PM, not 24 hour clock
+function formatAMPM(hour, minutes) {
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const hour12 = hour % 12 || 12; // Convert to 12-hour format
+    return `${hour12}:${String(minutes).padStart(2, '0')} ${ampm}`;
+}
+function saveReservationToBackend(data) {
     fetch('http://localhost:5000/reservations', { //must update to heroku 
         method: 'POST',
         headers: {
@@ -65,5 +64,4 @@ document.getElementById('reservation-form').addEventListener('submit', function(
     .catch(error => {
         console.error('Error:', error);
     });
-
-})
+}
