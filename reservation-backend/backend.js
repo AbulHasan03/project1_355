@@ -9,7 +9,7 @@ app.use(express.json()); // Parse JSON bodies
 
 const mongoURL = process.env.MONGODB_URL;
 // MongoDB connection
-mongoose.connect(mongoURL,{ useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(mongoURL)
     
 .then(() => console.log('Connected to Mongo Atlas'))
 .catch(err => console.log('Error connecting to MongoDB:', err));
