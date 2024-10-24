@@ -5,30 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitty Kafé </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sticky_navbar.css">
 </head>
 <body>
 
-<header>
-    <h1>Kitty Kafé</h1>
-</header>
-
-<nav>
-    <ul>
-       <li><a href="index.html">Home</a></li>
-        <li><a href="adoption.html">Adoptions</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="reservations.html">Reservations</a></li>
-        <li><a href="merch.html">Merchandise</a></li>
-    </ul>
-</nav>
-
-<div class="hero-image">
-    <div class="hero-text">
-      <h1>Cat Cafe</h1>
-      <p>NYC's Hotspot for spending time with your furry friends.</p>
-      <a href="reservations.html"><button class="hero-text-button" type="submit">Reserve Table</button></a>
-    </div>
-  </div>
+<body>
+    <div id="sticky_navbar"></div>
+    
+<div class="hero">
+        <div class="container">
+            <h1>Welcome to Kitty Kafé</h1>
+            <p>NYC's Hotspot for meeting furry friends and enjoying fantastic food!</p>
+            <a href="reservations.html"><button class="hero-text-button">Reservations</button></a>
+            <p>View our adoptable cats here:</p>
+            <a href="adoption.html"><button class="hero-text-button">Adoptions</button></a>
+        </div>
+</div>
 
 <section id="about" class="about">
     <h2>About Us</h2>
@@ -103,5 +95,7 @@
     <p>&copy; 2024 Café Delight. All Rights Reserved.</p>
 </footer>
 
+<script src="sticky_navbar.js"></script>
+    
 </body>
 </html>
